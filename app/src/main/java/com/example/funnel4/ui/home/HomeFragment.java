@@ -10,7 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.funnel4.R;
+import com.example.funnel4.databinding.FragmentGalleryBinding;
 import com.example.funnel4.databinding.FragmentHomeBinding;
+import com.example.funnel4.ui.gallery.GalleryViewModel;
 
 public class HomeFragment extends Fragment {
 
@@ -18,20 +21,19 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+  //     HomeViewModel homeViewModel =
+  //             new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+  //     binding = FragmentHomeBinding.inflate(inflater, container, false);
+  //     View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+  //     //final TextView textView = binding.textGallery;
+  //     //galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+  //     return root;
+
+
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }
